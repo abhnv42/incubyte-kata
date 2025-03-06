@@ -4,7 +4,10 @@ from kata import add
 class TestKataMethods(unittest.TestCase):
 
     def test_wrong_arg_type(self):
-        self.assertEqual(add(1), "Invalid input")
+        with self.assertRaises(ValueError) as context:
+            add(1)
+        err = context.exception
+        self.assertEqual(str(err), "Invalid input")
 
     def test_empty_string(self):
         self.assertEqual(add(""), 0)
@@ -29,6 +32,12 @@ class TestKataMethods(unittest.TestCase):
             add("-1,2")
         err = context.exception
         self.assertEqual(str(err), "negative numbers not allowed : [-1]")
+
+    def test_multiple_negative_numbers(self):
+        with self.assertRaises(ValueError) as context:
+            add("-1,2,3,4,-6,-7")
+        err = context.exception
+        self.assertEqual(str(err), "negative numbers not allowed : [-1 -6 -7]")
 
 if __name__ == '__main__':
     unittest.main()
