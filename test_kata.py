@@ -13,7 +13,7 @@ class TestKataMethods(unittest.TestCase):
         self.assertEqual(add("1"), 1)
     
     def test_multiple_numbers(self):
-        self.assertEqual(add("1, 5"), 6)
+        self.assertEqual(add("1,5"), 6)
 
 if __name__ == '__main__':
     unittest.main()
