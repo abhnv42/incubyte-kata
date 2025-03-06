@@ -4,7 +4,7 @@ def add(numbers):
     if len(numbers) == 0: return 0
     if len(numbers) == 1: return int(numbers)
     
-    delimiter = ','
+    delimiter = ',|\\n'
 
     values = {int(x) for x in re.split(delimiter, numbers)}
     
