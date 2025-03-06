@@ -30,6 +30,6 @@ def add(numbers):
         else:
             positive_numbers.append(int(x))
 
-    if len(negative_numbers) > 0: raise ValueError(NEGATIVE_VALUE_ERROR.format(" ".join(negative_numbers)))
+    if len(negative_numbers) > 0: raise ValueError(NEGATIVE_VALUE_ERROR.format(",".join(negative_numbers)))
 
     return sum(positive_numbers)

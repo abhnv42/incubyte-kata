@@ -37,7 +37,7 @@ class TestKataMethods(unittest.TestCase):
         with self.assertRaises(ValueError) as context:
             add("-1,2,3,4,-6,-7")
         err = context.exception
-        self.assertEqual(str(err), "negative numbers not allowed : [-1 -6 -7]")
+        self.assertEqual(str(err), "negative numbers not allowed : [-1,-6,-7]")
 
 if __name__ == '__main__':
     unittest.main()
