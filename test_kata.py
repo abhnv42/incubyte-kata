@@ -24,5 +24,11 @@ class TestKataMethods(unittest.TestCase):
     def test_custom_delimiter(self):
         self.assertEqual(add("//;\n1;2"), 3)
 
+    def test_negative_numbers(self):
+        with self.assertRaises(ValueError) as context:
+            add("-1,2")
+        err = context.exception
+        self.assertEqual(str(err), "negative numbers not allowed : [-1]")
+
 if __name__ == '__main__':
     unittest.main()
