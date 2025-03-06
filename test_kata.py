@@ -21,5 +21,8 @@ class TestKataMethods(unittest.TestCase):
     def test_many_numbers_with_new_lines(self):
         self.assertEqual(add("1\n2,3\n4,5"), 15)
 
+    def test_custom_delimiter(self):
+        self.assertEqual(add("//;\n1;2"), 3)
+
 if __name__ == '__main__':
     unittest.main()
